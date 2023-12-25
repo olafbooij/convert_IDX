@@ -2,7 +2,7 @@ import struct as st
 from array import *
 import os
 import numpy as np
-import matplotlib.pyplot as plt
+from PIL import Image
 
 # This code is partially based on
 # the following GitHub repo:
@@ -37,7 +37,7 @@ class Idx:
 
                 file_path = cat_folder + "/" + file
 
-                img = plt.imread(file_path)
+                img = np.array(Image.open((file_path)))
                 width, height = img.shape
 
                 for x in range(0, width):
